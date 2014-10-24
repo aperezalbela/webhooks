@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import os
+import sys
+
+try:
+    import hubsite
+except ImportError:
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+    try:
+        import hubsite
+    except ImportError:
+        sys.stderr.write("Error: Can't find the project package 'hubsite'.\n")
+        sys.exit(1)
+
+from hubsite import settings
+from django.core.management import setup_environ
+from django.core.management import execute_from_command_line
+
+setup_environ(settings, 'hubsite.settings')
+execute_from_command_line()

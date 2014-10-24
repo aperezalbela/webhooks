@@ -1,0 +1,5 @@
+debian/django.wsgi        /usr/share/hubsite
+hubsite/templates         /usr/share/hubsite
+hubsite/media             /usr/share/hubsite
+debian/hubsite.conf       /etc/apache2/sites-enabled
+debian/local_settings.py  /etc/hubsite
